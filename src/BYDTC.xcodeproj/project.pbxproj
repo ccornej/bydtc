@@ -13,7 +13,7 @@
 		20199BDB1BEBD6CC00B5E3F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20199BDA1BEBD6CC00B5E3F1 /* Images.xcassets */; };
 		20199BDE1BEBD6CC00B5E3F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20199BDC1BEBD6CC00B5E3F1 /* LaunchScreen.xib */; };
 		20199BEA1BEBD6CC00B5E3F1 /* BYDTCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20199BE91BEBD6CC00B5E3F1 /* BYDTCTests.swift */; };
-		205CB6B61BEC0FDB00E912EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 205CB6B41BEC0FDB00E912EA /* Main.storyboard */; };
+		20E2F6591BF2A23E0037DCC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E2F6581BF2A23E0037DCC5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 		20199BE31BEBD6CC00B5E3F1 /* BYDTCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BYDTCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20199BE81BEBD6CC00B5E3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20199BE91BEBD6CC00B5E3F1 /* BYDTCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BYDTCTests.swift; sourceTree = "<group>"; };
-		205CB6B51BEC0FDB00E912EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../../../Desktop/BYDTC 2/BYDTC/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		20E2F6581BF2A23E0037DCC5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +79,12 @@
 		20199BCD1BEBD6CC00B5E3F1 /* BYDTC */ = {
 			isa = PBXGroup;
 			children = (
+				20E2F65A1BF2A24D0037DCC5 /* Models */,
 				20199BD01BEBD6CC00B5E3F1 /* AppDelegate.swift */,
 				20199BD51BEBD6CC00B5E3F1 /* ViewController.swift */,
 				20199BDA1BEBD6CC00B5E3F1 /* Images.xcassets */,
-				205CB6B41BEC0FDB00E912EA /* Main.storyboard */,
 				20199BDC1BEBD6CC00B5E3F1 /* LaunchScreen.xib */,
+				20E2F6581BF2A23E0037DCC5 /* Main.storyboard */,
 				20199BD21BEBD6CC00B5E3F1 /* BYDTC.xcdatamodeld */,
 				20199BCE1BEBD6CC00B5E3F1 /* Supporting Files */,
 			);
@@ -113,6 +114,13 @@
 				20199BE81BEBD6CC00B5E3F1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		20E2F65A1BF2A24D0037DCC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205CB6B61BEC0FDB00E912EA /* Main.storyboard in Resources */,
+				20E2F6591BF2A23E0037DCC5 /* Main.storyboard in Resources */,
 				20199BDE1BEBD6CC00B5E3F1 /* LaunchScreen.xib in Resources */,
 				20199BDB1BEBD6CC00B5E3F1 /* Images.xcassets in Resources */,
 			);
@@ -246,14 +254,6 @@
 				20199BDD1BEBD6CC00B5E3F1 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-		205CB6B41BEC0FDB00E912EA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				205CB6B51BEC0FDB00E912EA /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
