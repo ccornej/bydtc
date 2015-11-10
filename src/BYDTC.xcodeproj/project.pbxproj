@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		20199BD11BEBD6CC00B5E3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20199BD01BEBD6CC00B5E3F1 /* AppDelegate.swift */; };
 		20199BD41BEBD6CC00B5E3F1 /* BYDTC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20199BD21BEBD6CC00B5E3F1 /* BYDTC.xcdatamodeld */; };
-		20199BD61BEBD6CC00B5E3F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20199BD51BEBD6CC00B5E3F1 /* ViewController.swift */; };
 		20199BDB1BEBD6CC00B5E3F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20199BDA1BEBD6CC00B5E3F1 /* Images.xcassets */; };
 		20199BDE1BEBD6CC00B5E3F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20199BDC1BEBD6CC00B5E3F1 /* LaunchScreen.xib */; };
 		20199BEA1BEBD6CC00B5E3F1 /* BYDTCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20199BE91BEBD6CC00B5E3F1 /* BYDTCTests.swift */; };
+		202214D81BF2A4560010A5C7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202214D71BF2A4560010A5C7 /* MapViewController.swift */; };
+		206B0BAF1BF2A5A80098E194 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206B0BAE1BF2A5A80098E194 /* CoreLocation.framework */; };
 		20E2F6591BF2A23E0037DCC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E2F6581BF2A23E0037DCC5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -31,12 +32,13 @@
 		20199BCF1BEBD6CC00B5E3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20199BD01BEBD6CC00B5E3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20199BD31BEBD6CC00B5E3F1 /* BYDTC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BYDTC.xcdatamodel; sourceTree = "<group>"; };
-		20199BD51BEBD6CC00B5E3F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		20199BDA1BEBD6CC00B5E3F1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		20199BDD1BEBD6CC00B5E3F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		20199BE31BEBD6CC00B5E3F1 /* BYDTCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BYDTCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20199BE81BEBD6CC00B5E3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20199BE91BEBD6CC00B5E3F1 /* BYDTCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BYDTCTests.swift; sourceTree = "<group>"; };
+		202214D71BF2A4560010A5C7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		206B0BAE1BF2A5A80098E194 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		20E2F6581BF2A23E0037DCC5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206B0BAF1BF2A5A80098E194 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +64,7 @@
 		20199BC21BEBD6CC00B5E3F1 = {
 			isa = PBXGroup;
 			children = (
+				206B0BAE1BF2A5A80098E194 /* CoreLocation.framework */,
 				20199BCD1BEBD6CC00B5E3F1 /* BYDTC */,
 				20199BE61BEBD6CC00B5E3F1 /* BYDTCTests */,
 				20199BCC1BEBD6CC00B5E3F1 /* Products */,
@@ -81,7 +85,7 @@
 			children = (
 				20E2F65A1BF2A24D0037DCC5 /* Models */,
 				20199BD01BEBD6CC00B5E3F1 /* AppDelegate.swift */,
-				20199BD51BEBD6CC00B5E3F1 /* ViewController.swift */,
+				202214D71BF2A4560010A5C7 /* MapViewController.swift */,
 				20199BDA1BEBD6CC00B5E3F1 /* Images.xcassets */,
 				20199BDC1BEBD6CC00B5E3F1 /* LaunchScreen.xib */,
 				20E2F6581BF2A23E0037DCC5 /* Main.storyboard */,
@@ -223,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20199BD61BEBD6CC00B5E3F1 /* ViewController.swift in Sources */,
+				202214D81BF2A4560010A5C7 /* MapViewController.swift in Sources */,
 				20199BD41BEBD6CC00B5E3F1 /* BYDTC.xcdatamodeld in Sources */,
 				20199BD11BEBD6CC00B5E3F1 /* AppDelegate.swift in Sources */,
 			);

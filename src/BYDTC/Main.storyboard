@@ -4,20 +4,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="iH1-M6-Vzf">
             <objects>
-                <viewController id="o0S-VS-M7x" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8iZ-mp-Ro4"/>
-                        <viewControllerLayoutGuide type="bottom" id="0Nq-L4-GTZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LTx-Q1-Pvr">
+                <viewController id="o0S-VS-M7x" customClass="MapViewController" customModule="BYDTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="T4h-V3-ajM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                    </mapView>
+                    <connections>
+                        <outlet property="map" destination="T4h-V3-ajM" id="0GT-FM-SV8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wry-3r-fGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
