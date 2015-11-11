@@ -14,7 +14,7 @@
 		20199BEA1BEBD6CC00B5E3F1 /* BYDTCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20199BE91BEBD6CC00B5E3F1 /* BYDTCTests.swift */; };
 		202214D81BF2A4560010A5C7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202214D71BF2A4560010A5C7 /* MapViewController.swift */; };
 		206B0BAF1BF2A5A80098E194 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206B0BAE1BF2A5A80098E194 /* CoreLocation.framework */; };
-		20E2F6591BF2A23E0037DCC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E2F6581BF2A23E0037DCC5 /* Main.storyboard */; };
+		20F5694B1BF3CCCF00C96328 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20F569491BF3CCCF00C96328 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,7 @@
 		20199BE91BEBD6CC00B5E3F1 /* BYDTCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BYDTCTests.swift; sourceTree = "<group>"; };
 		202214D71BF2A4560010A5C7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		206B0BAE1BF2A5A80098E194 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		20E2F6581BF2A23E0037DCC5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		20F5694A1BF3CCCF00C96328 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../../Desktop/BYDTC/BYDTC/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 				202214D71BF2A4560010A5C7 /* MapViewController.swift */,
 				20199BDA1BEBD6CC00B5E3F1 /* Images.xcassets */,
 				20199BDC1BEBD6CC00B5E3F1 /* LaunchScreen.xib */,
-				20E2F6581BF2A23E0037DCC5 /* Main.storyboard */,
+				20F569491BF3CCCF00C96328 /* Main.storyboard */,
 				20199BD21BEBD6CC00B5E3F1 /* BYDTC.xcdatamodeld */,
 				20199BCE1BEBD6CC00B5E3F1 /* Supporting Files */,
 			);
@@ -207,9 +207,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20E2F6591BF2A23E0037DCC5 /* Main.storyboard in Resources */,
 				20199BDE1BEBD6CC00B5E3F1 /* LaunchScreen.xib in Resources */,
 				20199BDB1BEBD6CC00B5E3F1 /* Images.xcassets in Resources */,
+				20F5694B1BF3CCCF00C96328 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +258,14 @@
 				20199BDD1BEBD6CC00B5E3F1 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		20F569491BF3CCCF00C96328 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20F5694A1BF3CCCF00C96328 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
