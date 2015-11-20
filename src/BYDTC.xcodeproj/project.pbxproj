@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2001BEBE1BFFBDC80079F093 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001BEBD1BFFBDC80079F093 /* Events.swift */; };
+		2001BEC01BFFBDD10079F093 /* Hunts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001BEBF1BFFBDD10079F093 /* Hunts.swift */; };
+		2001BEC21BFFBDE40079F093 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001BEC11BFFBDE40079F093 /* Staff.swift */; };
+		2001BEC41BFFBDEC0079F093 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2001BEC31BFFBDEC0079F093 /* Users.swift */; };
 		20199BD11BEBD6CC00B5E3F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20199BD01BEBD6CC00B5E3F1 /* AppDelegate.swift */; };
 		20199BD41BEBD6CC00B5E3F1 /* BYDTC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20199BD21BEBD6CC00B5E3F1 /* BYDTC.xcdatamodeld */; };
 		20199BDB1BEBD6CC00B5E3F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20199BDA1BEBD6CC00B5E3F1 /* Images.xcassets */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2001BEBD1BFFBDC80079F093 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		2001BEBF1BFFBDD10079F093 /* Hunts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hunts.swift; sourceTree = "<group>"; };
+		2001BEC11BFFBDE40079F093 /* Staff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
+		2001BEC31BFFBDEC0079F093 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		20199BCB1BEBD6CC00B5E3F1 /* BYDTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BYDTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20199BCF1BEBD6CC00B5E3F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20199BD01BEBD6CC00B5E3F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +164,10 @@
 		20E2F65A1BF2A24D0037DCC5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2001BEBD1BFFBDC80079F093 /* Events.swift */,
+				2001BEBF1BFFBDD10079F093 /* Hunts.swift */,
+				2001BEC11BFFBDE40079F093 /* Staff.swift */,
+				2001BEC31BFFBDEC0079F093 /* Users.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -270,10 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2001BEC41BFFBDEC0079F093 /* Users.swift in Sources */,
 				682E7A341BF4343A007C100C /* LoginViewController.swift in Sources */,
 				202214D81BF2A4560010A5C7 /* MapViewController.swift in Sources */,
+				2001BEC01BFFBDD10079F093 /* Hunts.swift in Sources */,
 				20199BD41BEBD6CC00B5E3F1 /* BYDTC.xcdatamodeld in Sources */,
 				20199BD11BEBD6CC00B5E3F1 /* AppDelegate.swift in Sources */,
+				2001BEC21BFFBDE40079F093 /* Staff.swift in Sources */,
+				2001BEBE1BFFBDC80079F093 /* Events.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
