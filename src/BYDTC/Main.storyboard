@@ -19,7 +19,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPD-zh-ifA">
                                 <rect key="frame" x="110" y="112" width="155" height="100"/>
                                 <animations/>
-                                <state key="normal" title="Events" image="calendar_icon_organge.png">
+                                <state key="normal" title="Events" image="events">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -30,7 +30,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fff-HL-xES">
                                 <rect key="frame" x="51" y="226" width="295" height="111"/>
                                 <animations/>
-                                <state key="normal" title="My Agenda" image="my_schedule.png">
+                                <state key="normal" title="My Agenda" image="agenda">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,7 +41,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfn-Rl-Ric">
                                 <rect key="frame" x="95" y="345" width="230" height="100"/>
                                 <animations/>
-                                <state key="normal" title="Scavenger Hunt" image="scavenger_hunt.png">
+                                <state key="normal" title="Scavenger Hunt" image="scavenger_hunt">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -49,7 +49,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIm-aq-fZC">
                                 <rect key="frame" x="102" y="468" width="200" height="100"/>
                                 <animations/>
-                                <state key="normal" title="Contact Info" image="contact_us.png">
+                                <state key="normal" title="Contact Info" image="contact_us">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -157,7 +157,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_screen.png" translatesAutoresizingMaskIntoConstraints="NO" id="RaO-3u-VhV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_screen" translatesAutoresizingMaskIntoConstraints="NO" id="RaO-3u-VhV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <animations/>
                             </imageView>
@@ -170,7 +170,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cen-t8-FtB">
                                 <rect key="frame" x="130" y="334" width="125" height="117"/>
                                 <animations/>
-                                <state key="normal" image="Go-64.png">
+                                <state key="normal" image="go_btn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -257,11 +257,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Go-64.png" width="64" height="64"/>
-        <image name="calendar_icon_organge.png" width="100" height="100"/>
-        <image name="contact_us.png" width="100" height="100"/>
-        <image name="login_screen.png" width="1080" height="1920"/>
-        <image name="my_schedule.png" width="100" height="100"/>
-        <image name="scavenger_hunt.png" width="100" height="100"/>
+        <image name="agenda" width="100" height="100"/>
+        <image name="contact_us" width="100" height="100"/>
+        <image name="events" width="100" height="100"/>
+        <image name="go_btn" width="64" height="64"/>
+        <image name="login_screen" width="1080" height="1920"/>
+        <image name="scavenger_hunt" width="100" height="100"/>
     </resources>
 </document>
