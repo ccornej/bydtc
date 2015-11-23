@@ -23,10 +23,9 @@
     </entity>
     <entity name="Staff" representedClassName="PRODUCT_MODULE_NAME.Staff" syncable="YES">
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -38,7 +37,7 @@
     <elements>
         <element name="Events" positionX="-45" positionY="9" width="128" height="180"/>
         <element name="Hunts" positionX="-27" positionY="27" width="128" height="165"/>
-        <element name="Staff" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="Staff" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="Users" positionX="-9" positionY="45" width="128" height="90"/>
     </elements>
 </model>

@@ -12,10 +12,9 @@ import CoreData
 class Staff: NSManagedObject {
     
     @NSManaged var email: String
-    @NSManaged var firstName: String
+    @NSManaged var name: String
     @NSManaged var id: NSNumber
     @NSManaged var info: String
-    @NSManaged var lastName: String
     @NSManaged var phone: NSNumber
     @NSManaged var title: String
     

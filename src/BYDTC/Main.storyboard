@@ -75,22 +75,54 @@
         <!--Events-->
         <scene sceneID="UqL-ob-IE6">
             <objects>
-                <tableViewController id="xtB-FM-Hc0" sceneMemberID="viewController">
+                <tableViewController id="xtB-FM-Hc0" customClass="EventViewController" customModule="BYDTC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nH4-LX-Rgg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" id="H9L-lZ-eOn">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" id="H9L-lZ-eOn" customClass="EventCell" customModule="BYDTC" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H9L-lZ-eOn" id="nnQ-1H-MsB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:30 pm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQl-D4-wns">
+                                            <rect key="frame" x="292" y="4" width="75" height="35"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="sdM-VU-4Cn"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mother Daughter Meeting" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="riW-i9-u6U">
+                                            <rect key="frame" x="11" y="0.0" width="273" height="43"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="FQl-D4-wns" firstAttribute="top" secondItem="nnQ-1H-MsB" secondAttribute="topMargin" constant="-4" id="71f-gt-J1a"/>
+                                        <constraint firstItem="FQl-D4-wns" firstAttribute="leading" secondItem="riW-i9-u6U" secondAttribute="trailing" constant="8" symbolic="YES" id="KqY-ce-qgY"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="FQl-D4-wns" secondAttribute="trailing" id="Pj4-SL-yo9"/>
+                                        <constraint firstItem="riW-i9-u6U" firstAttribute="centerY" secondItem="FQl-D4-wns" secondAttribute="centerY" id="VHx-L5-dbl"/>
+                                        <constraint firstAttribute="bottom" secondItem="riW-i9-u6U" secondAttribute="bottom" id="fhr-QJ-LBV"/>
+                                        <constraint firstItem="riW-i9-u6U" firstAttribute="top" secondItem="nnQ-1H-MsB" secondAttribute="top" id="tpj-cV-jTy"/>
+                                        <constraint firstItem="riW-i9-u6U" firstAttribute="leading" secondItem="nnQ-1H-MsB" secondAttribute="leadingMargin" constant="3" id="xzx-Qe-8u4"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="eventTime" destination="FQl-D4-wns" id="eEo-Ox-Z7n"/>
+                                    <outlet property="eventTitle" destination="riW-i9-u6U" id="xBa-IZ-ZaF"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -112,14 +144,14 @@
         <!--My Agenda-->
         <scene sceneID="nbi-5w-PXn">
             <objects>
-                <tableViewController id="oK8-6T-6tA" sceneMemberID="viewController">
+                <tableViewController id="oK8-6T-6tA" customClass="AgendaViewController" customModule="BYDTC" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="cQS-4r-zcP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="agendaCell" id="oqV-k9-XdF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="agendaCell" id="oqV-k9-XdF" customClass="EventCell" customModule="BYDTC" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oqV-k9-XdF" id="UHX-ea-1iy">
@@ -232,20 +264,56 @@
         <!--Contact Info-->
         <scene sceneID="5CS-iH-ein">
             <objects>
-                <tableViewController id="nK0-Qj-mga" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="VKF-zl-aAf">
+                <tableViewController id="nK0-Qj-mga" customClass="ContactViewController" customModule="BYDTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="22" sectionFooterHeight="22" id="VKF-zl-aAf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" id="O6b-hj-i8m">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" rowHeight="101" id="O6b-hj-i8m" customClass="ContactCell" customModule="BYDTC" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O6b-hj-i8m" id="NO3-ah-vji">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="John Doe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egA-J6-HC0">
+                                            <rect key="frame" x="8" y="8" width="201" height="39"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Director of events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLI-JS-xlB">
+                                            <rect key="frame" x="8" y="39" width="246" height="34"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="johndoe@clemson.edu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOo-BQ-hPF">
+                                            <rect key="frame" x="8" y="60" width="359" height="43"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="864-337-2354" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVb-S4-oYg">
+                                            <rect key="frame" x="234" y="35" width="141" height="39"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="emailLabel" destination="HOo-BQ-hPF" id="P4G-Gf-MIf"/>
+                                    <outlet property="nameLabel" destination="egA-J6-HC0" id="2vc-g7-PNH"/>
+                                    <outlet property="phoneNumberLabel" destination="KVb-S4-oYg" id="Pt7-Sn-0dK"/>
+                                    <outlet property="titleLabel" destination="TLI-JS-xlB" id="nct-YU-9XS"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -258,7 +326,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpA-wu-hXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="389.5" y="1064.5"/>
+            <point key="canvasLocation" x="559.5" y="1140.5"/>
         </scene>
         <!--Maps-->
         <scene sceneID="v11-HJ-tCe">

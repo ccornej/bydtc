@@ -11,14 +11,9 @@ import Foundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-
-    
     override func viewDidLoad() {
 
-
     }
-
-
 
     //Hides the keyboard when white space is touched.
     //Ack: Tony Abboud. https://www.youtube.com/watch?v=cAQtOsfkD5A
