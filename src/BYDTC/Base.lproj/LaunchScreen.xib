@@ -7,24 +7,24 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="KRV-cp-5XT">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="673"/>
+                    <rect key="frame" x="-3" y="-3" width="327" height="574"/>
                     <animations/>
                 </imageView>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="KRV-cp-5XT" secondAttribute="trailing" constant="-18" id="6WB-16-TPR"/>
-                <constraint firstItem="KRV-cp-5XT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Bjd-bP-nie"/>
-                <constraint firstItem="KRV-cp-5XT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mlf-gR-Wjg"/>
-                <constraint firstAttribute="bottom" secondItem="KRV-cp-5XT" secondAttribute="bottom" constant="-6" id="tG8-2A-OZB"/>
+                <constraint firstItem="KRV-cp-5XT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-3" id="BGa-ex-nvP"/>
+                <constraint firstItem="KRV-cp-5XT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-3" id="Fjk-6W-kcR"/>
+                <constraint firstItem="KRV-cp-5XT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cuR-ea-9cS"/>
+                <constraint firstItem="KRV-cp-5XT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="n8p-H3-2Xo"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
