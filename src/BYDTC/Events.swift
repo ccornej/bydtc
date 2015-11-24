@@ -12,6 +12,7 @@ import CoreData
 class Events: NSManagedObject {
     
     @NSManaged var capacity: NSNumber
+    @NSManaged var room: String
     @NSManaged var desc: String
     @NSManaged var enrolled: NSNumber
     @NSManaged var going: NSNumber

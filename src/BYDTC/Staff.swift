@@ -15,7 +15,7 @@ class Staff: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var id: NSNumber
     @NSManaged var info: String
-    @NSManaged var phone: NSNumber
+    @NSManaged var phone: String
     @NSManaged var title: String
     
 }

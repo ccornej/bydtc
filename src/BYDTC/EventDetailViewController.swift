@@ -1,44 +1,67 @@
 //
-//  MapView.swift
+//  EventDetailViewController.swift
 //  BYDTC
 //
-//  Created by Evan Dorn on 11/10/15.
+//  Created by Bradley Kennedy on 11/23/15.
 //  Copyright (c) 2015 Clemson University. All rights reserved.
 //
 
-/*
-* NOTE: You can find Longitude & Latitude values using Google maps by searching
-*   Then right clicking and selection "what's here"
-*/
-
-/*
-*  NOTE: To access the user's location, you must add the CoreLocation library in the build settins
-*/
-
-/*
-* NOTE: if you want to request User's location need to add
-*
-* NSLocationWhenInUseUsageDescription for regular use and --
-* NSLocationAlwaysUsageDescription for background use in the info.plist file
-*/
-
-
 import Foundation
+import UIKit
+import CoreData
 import MapKit
 import CoreLocation
-import CoreData
 
-// MKMapViewDelegate and MapKit API needed for associated methods
-// CLLocationManagerDelegate allows for functions needed to get user's location
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    
+    // Class Variables
     @IBOutlet weak var map: MKMapView!
-    
     var locationManager = CLLocationManager()
+    
+    @IBOutlet weak var roomLocation: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var enrolled: UILabel!
+    @IBOutlet weak var capacity: UILabel!
+    @IBOutlet weak var desc: UILabel!
+    @IBOutlet weak var going: UISegmentedControl!
+    @IBAction func goingAction(sender: AnyObject) {
+        var managedObject: Events = results[0] as! Events
+        if going.selectedSegmentIndex == 0{
+            managedObject.setValue(0, forKey: "going")
+            if managedObject.enrolled as Int > 0{
+                managedObject.setValue((managedObject.enrolled as Int) - 1, forKey: "enrolled")
+            }
+            context.save(nil)
+        }
+        else if going.selectedSegmentIndex == 1{
+            if managedObject.enrolled as Int >= managedObject.capacity as Int{
+                
+                //we should make an alert pop up here!! MAX CAPACITY SORRY
+                
+                going.selectedSegmentIndex = 0
+            }
+            else{
+                managedObject.setValue(1, forKey: "going")
+                managedObject.setValue((managedObject.enrolled as Int) + 1, forKey: "enrolled")
+                context.save(nil)
+            }
+        }
+        enrolled.text = "\(managedObject.enrolled)"
+    }
+
+    
+    var appDel = UIApplication.sharedApplication().delegate as! AppDelegate
+    var context: NSManagedObjectContext!
+    var request: NSFetchRequest!
+    var results: NSArray = []
+    var eventid = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK -- Map Data
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest           // Best location Accuracy (uses more battery)
         // (Note) requestAlwaysAuthorization is the 2nd option
@@ -95,6 +118,38 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         uilpgr.minimumPressDuration = 2
         
         map.addGestureRecognizer(uilpgr)        // add the gesture to the map
+        
+        // MARK -- Loading Label Data
+        loadData()
+        if(results.count == 1){
+            var hours: Int = 0
+            var minutes: Int = 0
+            var timeOfDay = "am"
+            hours = Int((results[0] as! Events).time) / 100
+            minutes = Int((results[0] as! Events).time) % 100
+            
+            // Handling for am/pm with 24 hours time
+            if(hours > 12) {
+                hours = hours - 12
+                timeOfDay = "pm"
+            }
+            
+            time.text = "\(hours):" + String(format: "%02d", minutes) + " " +  timeOfDay
+            roomLocation.text = (results[0] as! Events).room
+            enrolled.text = "\((results[0] as! Events).enrolled)"
+            capacity.text = "\((results[0] as! Events).capacity)"
+            desc.text = (results[0] as! Events).desc
+            going.selectedSegmentIndex = (results[0] as! Events).going as Int
+            name.text = (results[0] as! Events).name
+            
+        }
+        else if(results.count > 1){
+            println("ERROR: Found multiple events with id == \(eventid)")
+        }
+        else {
+            println("ERROR: Could not locate an Event with id == \(eventid)")
+        }
+        //eventIdLabel.text = "Selected Event ID: \(eventid)"
     }
     
     func mapAction(gestureRecognizer: UIGestureRecognizer) {
@@ -138,8 +193,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.map.setRegion(region, animated: false)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadData() {
+        context = appDel.managedObjectContext
+        var request = NSFetchRequest(entityName: "Events")
+        request.returnsObjectsAsFaults = false
+        let predicate = NSPredicate(format: "id == %d", eventid)
+        request.predicate = predicate;
+        results = context.executeFetchRequest(request, error: nil)!
     }
 }

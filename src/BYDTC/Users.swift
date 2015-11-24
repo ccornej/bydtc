@@ -13,6 +13,6 @@ class Users: NSManagedObject {
     
     @NSManaged var id: NSNumber
     @NSManaged var name: String
-    @NSManaged var phone: NSNumber
+    @NSManaged var phone: String
     
 }

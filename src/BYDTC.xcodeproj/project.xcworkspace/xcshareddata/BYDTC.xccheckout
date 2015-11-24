@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>6B973507-2CB5-473A-A375-2F183504E967</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>BYDTC</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>FBF7CDF934B502793F10BF63F0F8409F16A13521</key>
 		<string>https://github.com/evandorn/os_final_project.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>src/BYDTC.xcodeproj/project.xcworkspace</string>
+	<string>src/BYDTC.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>FBF7CDF934B502793F10BF63F0F8409F16A13521</key>
