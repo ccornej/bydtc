@@ -17,9 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPD-zh-ifA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPD-zh-ifA">
                                 <rect key="frame" x="110" y="112" width="155" height="100"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7bq-ZL-JV1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Events" image="events">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -28,7 +32,7 @@
                                     <segue destination="xtB-FM-Hc0" kind="show" id="vDX-7s-QZi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fff-HL-xES">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fff-HL-xES">
                                 <rect key="frame" x="51" y="226" width="295" height="111"/>
                                 <animations/>
                                 <state key="normal" title="My Agenda" image="agenda">
@@ -39,9 +43,12 @@
                                     <segue destination="oK8-6T-6tA" kind="show" id="leW-qA-v5M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfn-Rl-Ric">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rfn-Rl-Ric">
                                 <rect key="frame" x="95" y="345" width="230" height="100"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7PH-dJ-OyT"/>
+                                </constraints>
                                 <state key="normal" title="Scavenger Hunt" image="scavenger_hunt">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,9 +57,12 @@
                                     <segue destination="dQX-eB-CEu" kind="show" id="atN-f8-V9n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIm-aq-fZC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIm-aq-fZC">
                                 <rect key="frame" x="102" y="468" width="200" height="100"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="MdY-dA-WDO"/>
+                                </constraints>
                                 <state key="normal" title="Contact Info" image="contact_us">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,6 +74,18 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Rfn-Rl-Ric" firstAttribute="top" secondItem="fff-HL-xES" secondAttribute="bottom" constant="8" symbolic="YES" id="2Gt-nJ-rsM"/>
+                            <constraint firstItem="Rfn-Rl-Ric" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="79" id="4yX-bc-ARA"/>
+                            <constraint firstItem="IPD-zh-ifA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="8Jp-yc-ETL"/>
+                            <constraint firstItem="fff-HL-xES" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="8NV-J6-N7J"/>
+                            <constraint firstItem="fff-HL-xES" firstAttribute="top" secondItem="IPD-zh-ifA" secondAttribute="bottom" constant="14" id="Ju7-xe-iS0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fff-HL-xES" secondAttribute="trailing" constant="13" id="NaG-Rg-OLc"/>
+                            <constraint firstItem="FIm-aq-fZC" firstAttribute="top" secondItem="Rfn-Rl-Ric" secondAttribute="bottom" constant="23" id="OKF-4J-BRG"/>
+                            <constraint firstItem="IPD-zh-ifA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WLf-bC-byb"/>
+                            <constraint firstItem="FIm-aq-fZC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="86" id="bvd-Hq-PH1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FIm-aq-fZC" secondAttribute="bottom" constant="99" id="hYt-A4-qrq"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="UIX-ZA-Bbh">
                         <barButtonItem key="rightBarButtonItem" title="About" id="hfG-NV-XCk">
@@ -580,6 +602,6 @@
         <image name="scavenger_hunt" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bMd-Sz-NHn"/>
+        <segue reference="atN-f8-V9n"/>
     </inferredMetricsTieBreakers>
 </document>
