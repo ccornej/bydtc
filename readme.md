@@ -2,13 +2,12 @@
 ## Take Your Daughter To Clemson
 
 ### TODOS:
-    1.) PHP Scripts
-    2.) Link External DB with CoreData via AlamoFire and JSON
-    3.) Complete Scavenger Hunt (Should be a basic table view controller) 
-    4.) Complete Authoring Tool
-    5.) Complete Final Presentation Slides
-    6.) Complete Documentation (User and Technical Reference)
-    7.) Optional: Clean up design
+    1.) Link External DB with CoreData via AlamoFire and JSON
+    2.) Complete Scavenger Hunt (Should be a basic table view controller) 
+    3.) Complete Authoring Tool
+    4.) Complete Final Presentation Slides
+    5.) Complete Documentation (User and Technical Reference)
+    6.) Optional: Clean up design
 
 ### Team Memebers
     1.) Evan Dorn
