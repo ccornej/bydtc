@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import CoreLocation
 import Foundation
+import Alamofire
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     

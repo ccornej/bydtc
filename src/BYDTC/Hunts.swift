@@ -19,5 +19,6 @@ class Hunts: NSManagedObject {
     @NSManaged var lat: AnyObject
     @NSManaged var lon: AnyObject
     @NSManaged var name: String
-    
+    @NSManaged var found: NSNumber
+    @NSManaged var imageURL: String
 }
