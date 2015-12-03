@@ -26,6 +26,7 @@
 		20D798DD1C03A85E00FD4DF7 /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D798DC1C03A85E00FD4DF7 /* ContactCell.swift */; };
 		20D798DF1C03A86A00FD4DF7 /* ScavengerHuntCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D798DE1C03A86A00FD4DF7 /* ScavengerHuntCell.swift */; };
 		20DA5A611C10CBC600A1B97B /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = A2032E3B1C10C17500F96B39 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20FADE771C10D27700344EF4 /* HuntsItemDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FADE761C10D27700344EF4 /* HuntsItemDescriptionViewController.swift */; };
 		682E7A341BF4343A007C100C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E7A331BF4343A007C100C /* LoginViewController.swift */; };
 		68C080441BFBFE54003AFE76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68C080431BFBFE54003AFE76 /* Main.storyboard */; };
 		A2032E441C10C1B300F96B39 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2032E3B1C10C17500F96B39 /* Alamofire.framework */; };
@@ -115,6 +116,7 @@
 		20D798D91C03A82800FD4DF7 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		20D798DC1C03A85E00FD4DF7 /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		20D798DE1C03A86A00FD4DF7 /* ScavengerHuntCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScavengerHuntCell.swift; sourceTree = "<group>"; };
+		20FADE761C10D27700344EF4 /* HuntsItemDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntsItemDescriptionViewController.swift; sourceTree = "<group>"; };
 		682E7A331BF4343A007C100C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		68C080431BFBFE54003AFE76 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A2032E331C10C17500F96B39 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-1.3.1/Alamofire.xcodeproj"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				20C23C711C03A54E00294B15 /* AgendaViewController.swift */,
 				20C23C731C03A55F00294B15 /* ContactViewController.swift */,
 				20C23C751C03A57400294B15 /* ScavengerHuntViewController.swift */,
+				20FADE761C10D27700344EF4 /* HuntsItemDescriptionViewController.swift */,
 				68C080431BFBFE54003AFE76 /* Main.storyboard */,
 				20199BDA1BEBD6CC00B5E3F1 /* Images.xcassets */,
 				20199BDC1BEBD6CC00B5E3F1 /* LaunchScreen.xib */,
@@ -391,6 +394,7 @@
 				20C23C701C03A54300294B15 /* EventViewController.swift in Sources */,
 				20C23C741C03A55F00294B15 /* ContactViewController.swift in Sources */,
 				20D798DA1C03A82800FD4DF7 /* EventCell.swift in Sources */,
+				20FADE771C10D27700344EF4 /* HuntsItemDescriptionViewController.swift in Sources */,
 				202214D81BF2A4560010A5C7 /* MapViewController.swift in Sources */,
 				20C23C761C03A57400294B15 /* ScavengerHuntViewController.swift in Sources */,
 				A2386E511C03DEC3001581CA /* AgendaCell.swift in Sources */,

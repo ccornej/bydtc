@@ -12,6 +12,7 @@ import CoreData
 
 class ScavengerHuntCell: UITableViewCell {
     
+    @IBOutlet weak var huntsItemLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         

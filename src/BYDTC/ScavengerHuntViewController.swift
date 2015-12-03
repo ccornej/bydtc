@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 class ScavengerHuntViewController: UITableViewController {
-    
+        
     override func viewDidLoad() {
         
     }

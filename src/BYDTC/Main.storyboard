@@ -54,7 +54,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="PEv-dz-62t" kind="show" id="Geu-lr-BGS"/>
+                                    <segue destination="O36-Zk-8lH" kind="show" id="QTR-7j-37d"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIm-aq-fZC">
@@ -223,6 +223,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1MD-DI-81w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1145.5" y="652.5"/>
+        </scene>
+        <!--Hunts-->
+        <scene sceneID="NXQ-gC-Lln">
+            <objects>
+                <tableViewController id="O36-Zk-8lH" customClass="ScavengerHuntViewController" customModule="BYDTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FEa-Ca-6fA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="YoE-QU-lJd" customClass="ScavengerHuntCell" customModule="BYDTC" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YoE-QU-lJd" id="ks2-eA-5sK">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scavenger Hunt Item" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1r-xD-lzL">
+                                            <rect key="frame" x="8" y="0.0" width="359" height="43"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="x1r-xD-lzL" firstAttribute="leading" secondItem="ks2-eA-5sK" secondAttribute="leadingMargin" id="3pu-uc-5Lt"/>
+                                        <constraint firstItem="x1r-xD-lzL" firstAttribute="top" secondItem="ks2-eA-5sK" secondAttribute="top" id="6Ay-Ne-8Eb"/>
+                                        <constraint firstAttribute="bottom" secondItem="x1r-xD-lzL" secondAttribute="bottom" id="XiX-de-7hX"/>
+                                        <constraint firstItem="x1r-xD-lzL" firstAttribute="centerX" secondItem="ks2-eA-5sK" secondAttribute="centerX" id="eJ8-p0-7qK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="huntsItemLabel" destination="x1r-xD-lzL" id="uQ1-fM-tYd"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O36-Zk-8lH" id="lVt-du-GSc"/>
+                            <outlet property="delegate" destination="O36-Zk-8lH" id="Y4n-KM-J0K"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Hunts" id="b29-18-eLX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wem-QW-Ly0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063.5" y="1483.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SVg-1J-QB9">
+            <objects>
+                <viewController id="M8y-8o-ONE" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ghT-fP-Hc0"/>
+                        <viewControllerLayoutGuide type="bottom" id="9eG-yM-zt4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D0r-ou-dGz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goz-k6-Qql" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1764" y="1474"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="rbj-nH-2NI">
@@ -416,36 +483,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpA-wu-hXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="559.5" y="1140.5"/>
-        </scene>
-        <!--Title-->
-        <scene sceneID="VbQ-bA-Tox">
-            <objects>
-                <tableViewController id="PEv-dz-62t" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="M3E-0J-Q8Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Dli-SJ-Iif">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dli-SJ-Iif" id="Ma3-yi-98o">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="PEv-dz-62t" id="ucr-FQ-hvB"/>
-                            <outlet property="delegate" destination="PEv-dz-62t" id="pfR-Ov-fjp"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="g6r-Lg-ctO"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uQF-VE-AzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1185.5" y="1640.5"/>
         </scene>
         <!--Event Details-->
         <scene sceneID="h0z-b5-FDC">
