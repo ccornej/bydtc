@@ -14,6 +14,8 @@
 		20199BEA1BEBD6CC00B5E3F1 /* BYDTCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20199BE91BEBD6CC00B5E3F1 /* BYDTCTests.swift */; };
 		202214D81BF2A4560010A5C7 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202214D71BF2A4560010A5C7 /* MapViewController.swift */; };
 		206B0BAF1BF2A5A80098E194 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206B0BAE1BF2A5A80098E194 /* CoreLocation.framework */; };
+		20939AFA1C14DD0200EA784D /* HuntItemDiscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939AF91C14DD0200EA784D /* HuntItemDiscriptionViewController.swift */; };
+		20939AFF1C14DF9D00EA784D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20939AFE1C14DF9D00EA784D /* HomeViewController.swift */; };
 		20B34E0F1C036DD9003AA361 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B34E0E1C036DD9003AA361 /* Staff.swift */; };
 		20B34E111C036DE1003AA361 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B34E101C036DE1003AA361 /* Events.swift */; };
 		20B34E131C036DEA003AA361 /* Hunts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B34E121C036DEA003AA361 /* Hunts.swift */; };
@@ -107,6 +109,8 @@
 		20199BE91BEBD6CC00B5E3F1 /* BYDTCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BYDTCTests.swift; sourceTree = "<group>"; };
 		202214D71BF2A4560010A5C7 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		206B0BAE1BF2A5A80098E194 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		20939AF91C14DD0200EA784D /* HuntItemDiscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuntItemDiscriptionViewController.swift; sourceTree = "<group>"; };
+		20939AFE1C14DF9D00EA784D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		20B34E0E1C036DD9003AA361 /* Staff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
 		20B34E101C036DE1003AA361 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		20B34E121C036DEA003AA361 /* Hunts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hunts.swift; sourceTree = "<group>"; };
@@ -176,12 +180,14 @@
 				20199BD01BEBD6CC00B5E3F1 /* AppDelegate.swift */,
 				682E7A331BF4343A007C100C /* LoginViewController.swift */,
 				A22B4CB91C03E57900C646EE /* EventDetailViewController.swift */,
+				20939AF91C14DD0200EA784D /* HuntItemDiscriptionViewController.swift */,
+				20C23C751C03A57400294B15 /* ScavengerHuntViewController.swift */,
 				202214D71BF2A4560010A5C7 /* MapViewController.swift */,
 				685D256F1C11238200EABC97 /* circle_icon_white.png */,
 				20C23C6F1C03A54300294B15 /* EventViewController.swift */,
 				20C23C711C03A54E00294B15 /* AgendaViewController.swift */,
+				20939AFE1C14DF9D00EA784D /* HomeViewController.swift */,
 				20C23C731C03A55F00294B15 /* ContactViewController.swift */,
-				20C23C751C03A57400294B15 /* ScavengerHuntViewController.swift */,
 				68C080431BFBFE54003AFE76 /* Main.storyboard */,
 				685D25681C11223C00EABC97 /* purple_bg.png */,
 				20199BDA1BEBD6CC00B5E3F1 /* Images.xcassets */,
@@ -396,6 +402,7 @@
 			files = (
 				20B34E151C036DF5003AA361 /* Users.swift in Sources */,
 				20B34E131C036DEA003AA361 /* Hunts.swift in Sources */,
+				20939AFF1C14DF9D00EA784D /* HomeViewController.swift in Sources */,
 				20B34E111C036DE1003AA361 /* Events.swift in Sources */,
 				20B34E0F1C036DD9003AA361 /* Staff.swift in Sources */,
 				682E7A341BF4343A007C100C /* LoginViewController.swift in Sources */,
@@ -411,6 +418,7 @@
 				20D798DD1C03A85E00FD4DF7 /* ContactCell.swift in Sources */,
 				A22B4CBA1C03E57900C646EE /* EventDetailViewController.swift in Sources */,
 				20199BD11BEBD6CC00B5E3F1 /* AppDelegate.swift in Sources */,
+				20939AFA1C14DD0200EA784D /* HuntItemDiscriptionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

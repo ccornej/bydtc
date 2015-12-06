@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         var context: NSManagedObjectContext = appDel.managedObjectContext!
         
+        /*
         
         // Events for loop
         for index in 1...10 {
@@ -36,6 +37,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             newEvent.lon = -82.8392
             newEvent.going = 0
         }
+*/
         
         // Staff for loop
         for index in 1...10 {
@@ -49,6 +51,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             newStaff.email = "staffmember\(index)@clemson.edu"
             newStaff.phone = "864-337-2354"
             newStaff.title = "Coordinator of event \(index)"
+        }
+        
+        
+        // hunts for loop
+        for index in 1...10 {
+            
+            let ent = NSEntityDescription.entityForName("Hunts", inManagedObjectContext: context)
+            var newHunt = Hunts(entity: ent!, insertIntoManagedObjectContext: context)
+            newHunt.id = index
+            newHunt.name = "Hunt \(index)"
+            newHunt.found = 0
+            newHunt.clue1 = "This is the discription for Hunt item \(index). This is item is near Tillman hall. There is a green bush. And a roundabout. This item is a tall metal object. It's silver......it resembles a person."
         }
     }
 

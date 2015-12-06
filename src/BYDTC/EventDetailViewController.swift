@@ -13,8 +13,7 @@ import MapKit
 import CoreLocation
 
 class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    
-    
+
     // Class Variables
     @IBOutlet weak var map: MKMapView!
     var locationManager = CLLocationManager()
@@ -35,7 +34,7 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
             }
             context.save(nil)
         }
-        else if going.selectedSegmentIndex == 1{
+        else if going.selectedSegmentIndex == 1 {
             if managedObject.enrolled as Int >= managedObject.capacity as Int{
                 
                 //we should make an alert pop up here!! MAX CAPACITY SORRY
@@ -92,7 +91,6 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
         
         // set the map region and have it animated
         map.setRegion(region, animated: true)
-        
         
         /*
         * Part 2: Annotations  (The little red pins)
@@ -169,8 +167,7 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
         annotation.subtitle = "You are here"
         
         map.addAnnotation(annotation)
-    }
-    
+    } 
     
     // Handle user movement on the map
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {

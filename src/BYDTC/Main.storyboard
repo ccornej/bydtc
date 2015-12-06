@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pqx-Zr-z2z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15C48a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pqx-Zr-z2z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,7 +8,7 @@
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Home" id="BYZ-38-t0r" customClass="ViewController" customModule="BYDTC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="BYZ-38-t0r" customClass="HomeViewController" customModule="BYDTC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -19,15 +19,19 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle_icon_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ib-gX-1he">
                                 <rect key="frame" x="168" y="313" width="207" height="203"/>
+                                <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle_icon_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="axQ-bX-lfR">
                                 <rect key="frame" x="-18" y="320" width="207" height="203"/>
+                                <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle_icon_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="bxw-n8-oJN">
                                 <rect key="frame" x="-18" y="90" width="207" height="203"/>
+                                <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle_icon_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="PN4-zh-w0D">
                                 <rect key="frame" x="174" y="91" width="207" height="203"/>
+                                <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIm-aq-fZC">
                                 <rect key="frame" x="221" y="364" width="112" height="110"/>
@@ -48,29 +52,33 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dQX-eB-CEu" kind="show" id="atN-f8-V9n"/>
+                                    <segue destination="4A5-9z-odf" kind="show" id="b7x-6b-elS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eg1-oS-kN1">
                                 <rect key="frame" x="40" y="273" width="87" height="39"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scavenger Hunt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="65r-EP-Fkx">
                                 <rect key="frame" x="9" y="479" width="207" height="81"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQZ-Rf-W3Y">
                                 <rect key="frame" x="202" y="485" width="213" height="70"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My ageneda" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmo-jC-SlE">
                                 <rect key="frame" x="202" y="273" width="157" height="39"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="21"/>
                                 <color key="textColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -114,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="576.5" y="253.5"/>
+            <point key="canvasLocation" x="612.5" y="281.5"/>
         </scene>
         <!--Events-->
         <scene sceneID="UqL-ob-IE6">
@@ -254,6 +262,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_screen" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-lJ-qVY">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cen-t8-FtB">
                                 <rect key="frame" x="138" y="337" width="99" height="93"/>
@@ -307,13 +316,15 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_screen" translatesAutoresizingMaskIntoConstraints="NO" id="dgg-26-gte">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzF-My-LTn">
                                 <rect key="frame" x="16" y="278" width="351" height="282"/>
+                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69000000000000006" colorSpace="calibratedRGB"/>
                                 <string key="text">The iOS app for Bring Your Daughter to Clemson is being developed by Evan Dorn, Brad Kennedy, and Chris Cornejo for CPSC 482. This make makes use of Databases (SQL and Core Data), Core Location, Map Views, And Table Views in order to provide a more effecient and streamlined experience for visiting students at the Bring Your Daughter To Clemson Conference.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -412,6 +423,149 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpA-wu-hXw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="559.5" y="1140.5"/>
+        </scene>
+        <!--Scavenger Hunt-->
+        <scene sceneID="DrH-Lp-mPT">
+            <objects>
+                <tableViewController id="4A5-9z-odf" customClass="ScavengerHuntViewController" customModule="BYDTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vwd-9S-wAm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="huntCell" id="wVz-jP-3Z3" customClass="ScavengerHuntCell" customModule="BYDTC" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wVz-jP-3Z3" id="HJN-U9-Qwa">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scavenger Hunt Item 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ag8-hW-NEz">
+                                            <rect key="frame" x="8" y="0.0" width="256" height="43"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Found Status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiW-vI-Es2">
+                                            <rect key="frame" x="246" y="11" width="121" height="21"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="121" id="9IQ-pM-d5H"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="ag8-hW-NEz" firstAttribute="bottom" secondItem="HJN-U9-Qwa" secondAttribute="bottomMargin" constant="8" id="GO4-VG-f02"/>
+                                        <constraint firstItem="UiW-vI-Es2" firstAttribute="leading" secondItem="ag8-hW-NEz" secondAttribute="trailing" constant="-18" id="Kto-eG-B8I"/>
+                                        <constraint firstItem="ag8-hW-NEz" firstAttribute="top" secondItem="HJN-U9-Qwa" secondAttribute="top" id="PaX-4w-hQK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UiW-vI-Es2" secondAttribute="trailing" id="YIW-Mn-7rw"/>
+                                        <constraint firstItem="ag8-hW-NEz" firstAttribute="leading" secondItem="HJN-U9-Qwa" secondAttribute="leading" constant="8" id="jo7-Th-2pq"/>
+                                        <constraint firstItem="UiW-vI-Es2" firstAttribute="top" secondItem="HJN-U9-Qwa" secondAttribute="topMargin" constant="3" id="x1i-wc-Hxl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="foundStatusLabel" destination="UiW-vI-Es2" id="zqs-ef-hWA"/>
+                                    <outlet property="huntItemLabel" destination="ag8-hW-NEz" id="yaN-ht-oel"/>
+                                    <segue destination="5MH-n2-X95" kind="show" identifier="huntItemSegue" id="B2N-ew-xbE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4A5-9z-odf" id="7O8-LT-fJa"/>
+                            <outlet property="delegate" destination="4A5-9z-odf" id="RUR-RS-lpO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Scavenger Hunt" id="l7p-MS-JXd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9s-Vf-2qc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1231.5" y="1465.5"/>
+        </scene>
+        <!--Item Description-->
+        <scene sceneID="FJS-PX-8na">
+            <objects>
+                <viewController id="5MH-n2-X95" customClass="HuntItemDiscriptionViewController" customModule="BYDTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dEd-IB-o5o"/>
+                        <viewControllerLayoutGuide type="bottom" id="T4b-0P-kn9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WiI-Xs-Hgb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyP-Yf-rLM">
+                                <rect key="frame" x="142" y="200" width="90" height="33"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="bn7-Ed-NEG"/>
+                                    <constraint firstAttribute="height" constant="33" id="bqT-KS-hBb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6b-dK-vit">
+                                <rect key="frame" x="127" y="598" width="120" height="49"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="PUV-Da-zIt"/>
+                                    <constraint firstAttribute="width" constant="120" id="TXX-YJ-RDw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Found It!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="FoundButton:" destination="5MH-n2-X95" eventType="touchUpInside" id="sYR-Pe-6JD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item N" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzp-M8-c7N">
+                                <rect key="frame" x="101" y="99" width="173" height="80"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyD-qp-EgU">
+                                <rect key="frame" x="16" y="241" width="339" height="355"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dyP-Yf-rLM" firstAttribute="top" secondItem="mzp-M8-c7N" secondAttribute="bottom" constant="21" id="9kp-vl-KkR"/>
+                            <constraint firstItem="mzp-M8-c7N" firstAttribute="centerX" secondItem="dyP-Yf-rLM" secondAttribute="centerX" id="BOr-uY-0k3"/>
+                            <constraint firstItem="dyP-Yf-rLM" firstAttribute="top" secondItem="dEd-IB-o5o" secondAttribute="bottom" constant="136" id="DWq-g4-XXy"/>
+                            <constraint firstItem="JyD-qp-EgU" firstAttribute="top" secondItem="dyP-Yf-rLM" secondAttribute="bottom" constant="8" symbolic="YES" id="Ex4-me-nRH"/>
+                            <constraint firstItem="dyP-Yf-rLM" firstAttribute="leading" secondItem="WiI-Xs-Hgb" secondAttribute="leadingMargin" constant="126" id="IgI-FM-Vh6"/>
+                            <constraint firstItem="mzp-M8-c7N" firstAttribute="leading" secondItem="WiI-Xs-Hgb" secondAttribute="leadingMargin" constant="85" id="Vhy-T8-hZO"/>
+                            <constraint firstItem="w6b-dK-vit" firstAttribute="top" secondItem="JyD-qp-EgU" secondAttribute="bottom" constant="2" id="aNH-5w-AJa"/>
+                            <constraint firstAttribute="bottom" secondItem="w6b-dK-vit" secondAttribute="bottom" constant="20" symbolic="YES" id="ajI-p0-yo3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JyD-qp-EgU" secondAttribute="trailing" constant="4" id="gUc-uf-qMy"/>
+                            <constraint firstItem="JyD-qp-EgU" firstAttribute="leading" secondItem="WiI-Xs-Hgb" secondAttribute="leadingMargin" id="glB-Mu-enH"/>
+                            <constraint firstItem="mzp-M8-c7N" firstAttribute="top" secondItem="dEd-IB-o5o" secondAttribute="bottom" constant="35" id="hUv-ak-Mjf"/>
+                            <constraint firstItem="w6b-dK-vit" firstAttribute="centerX" secondItem="WiI-Xs-Hgb" secondAttribute="centerX" id="uTo-o2-M29"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Item Description" id="cbX-Bz-vBG"/>
+                    <connections>
+                        <outlet property="clueItemDiscriptionView" destination="JyD-qp-EgU" id="Y3L-Xc-p2D"/>
+                        <outlet property="huntItemLabel" destination="mzp-M8-c7N" id="btm-ZR-4jW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Xy-rk-bxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1825.5" y="1429.5"/>
         </scene>
         <!--Event Details-->
         <scene sceneID="h0z-b5-FDC">
@@ -516,9 +670,11 @@
                             </segmentedControl>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purple_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="zzn-jI-VgR">
                                 <rect key="frame" x="0.0" y="613" width="375" height="10"/>
+                                <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purple_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dhl-Vq-F83">
                                 <rect key="frame" x="1" y="477" width="375" height="10"/>
+                                <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOq-lv-ymb">
                                 <rect key="frame" x="16" y="477" width="343" height="146"/>
@@ -532,6 +688,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL5-Li-0lr">
                                 <rect key="frame" x="16" y="388" width="107" height="22"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -597,6 +754,6 @@
         <image name="scavenger_hunt" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="atN-f8-V9n"/>
+        <segue reference="bMd-Sz-NHn"/>
     </inferredMetricsTieBreakers>
 </document>
