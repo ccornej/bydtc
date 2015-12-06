@@ -107,7 +107,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                             newEvent.lon = dubLon
                             newEvent.lat = dubLat
                             newEvent.going = 0
-                            
+                            newEvent.id = intID
                         }
                     }
                     context.save(nil)

@@ -75,24 +75,20 @@ class ScavengerHuntViewController: UITableViewController {
         // Item hasn't been found display empty text
         if((sortedResults[indexPath.row] as! Hunts).found == 0) {
             foundString = " "
-        }
-        else {
-            foundString = "💁😄✅"
+            // Else display these awesome emojis
+        } else {
+            foundString = "✅💁😄"
         }
         
         cell.foundStatusLabel?.text = foundString
-
         
         // else item has been found display awesome emojis
      /*   if((sortedResults[indexPath.row] as! Hunts).found == 1) {
             cell.foundStatusLabel?.text = "💁😄✅"
         } 
       */
-
         return cell
     }
-
-    
 
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
