@@ -14,18 +14,51 @@ import Alamofire
 
 class HomeViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
+    
     override func viewDidLoad() {
-        var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-        var context: NSManagedObjectContext = appDel.managedObjectContext!
+        //var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        //var context: NSManagedObjectContext = appDel.managedObjectContext!
+       // var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        // var context: NSManagedObjectContext = appDel.managedObjectContext!
        /*
         var request = NSFetchRequest(entityName: "Users")
         request.returnsObjectsAsFaults = false
         var results = context.executeFetchRequest(request, error: nil)!
         var user: Users = results[0] as! Users
         */
+        //loadData(0, appDel: appDel, context: context)
+        super.viewDidLoad()
+            }
+    
+    override func viewWillAppear(animated: Bool) {
+        var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        var context: NSManagedObjectContext = appDel.managedObjectContext!
+        super.viewWillAppear(animated)
         loadData(0, appDel: appDel, context: context)
+        
+        var request = NSFetchRequest(entityName: "Users")
+        
+        delay(1.0) {
+            request.returnsObjectsAsFaults = false
+            var results = context.executeFetchRequest(request, error: nil)!
+            var user: Users = results[0] as! Users
+            self.welcomeLabel?.text = "Welcome, \(user.name)!"
+        }
     }
-    func loadData(id: NSNumber, appDel: AppDelegate, context: NSManagedObjectContext){
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+
+    
+    func loadData(id: NSNumber, appDel: AppDelegate, context: NSManagedObjectContext) {
         var urlString = "http://people.cs.clemson.edu/~bckenne/getAllEvents.php"
         urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         println(urlString)
@@ -84,8 +117,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                         let predicate = NSPredicate(format: "id == %d", intID)
                         request.predicate = predicate;
                         var results = context.executeFetchRequest(request, error: nil)!
-                        if(results.count > 0){
+                        if(results.count > 0) {
                             var event: Events = results[0] as! Events
+
+                            if(intDel != 0) {
+                                context.deleteObject(event)
+                            } else {
                             event.setValue(stringName, forKey: "name")
                             event.setValue(stringDesc, forKey: "desc")
                             event.setValue(stringRoom, forKey: "room")
@@ -94,8 +131,8 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                             event.setValue(intEnr, forKey: "enrolled")
                             event.setValue(dubLon, forKey: "lon")
                             event.setValue(dubLat, forKey: "lat")
-                        }
-                        else{
+                            }
+                        } else {
                             let ent = NSEntityDescription.entityForName("Events", inManagedObjectContext: context)
                             var newEvent = Events(entity: ent!, insertIntoManagedObjectContext: context)
                             newEvent.name = stringName

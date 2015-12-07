@@ -60,63 +60,6 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK -- Map Data
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest           // Best location Accuracy (uses more battery)
-        // (Note) requestAlwaysAuthorization is the 2nd option
-        locationManager.requestWhenInUseAuthorization()                     // Will only access the user's location when the app is running
-        locationManager.startUpdatingLocation()                             // begins updating the user's location if they have given premissions
-        
-        /*
-        * Part 1: Setting the Map
-        */
-        
-        // Latitude & Longitude for Clemson
-        var latitude: CLLocationDegrees = 34.6783          // type is needed to use as coordinate
-        var longitude: CLLocationDegrees = -82.8392
-        
-        // Differnce between latitudes from one side of the screen to the other.
-        // Effectively zooms in
-        var latitudeDelta: CLLocationDegrees = 0.01
-        var longitudeDelta: CLLocationDegrees = 0.01
-        
-        // Construct Map Region
-        // Span and location need deltas and long & lat values
-        var span: MKCoordinateSpan = MKCoordinateSpanMake(latitudeDelta, longitudeDelta)
-        var location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        
-        // Define what portion of the map to display
-        // MKCoordinateRegionMake needs location and span
-        var region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        
-        // set the map region and have it animated
-        map.setRegion(region, animated: true)
-        
-        /*
-        * Part 2: Annotations  (The little red pins)
-        */
-        
-        // Default annotations
-        // Create an annotation
-        var annotation = MKPointAnnotation()
-        annotation.coordinate = location                // set coordinate to the location
-        annotation.title = "Clemson University"         // set title information
-        annotation.subtitle = "Welcome to Clemson"
-        
-        // Add the annotation to the map
-        map.addAnnotation(annotation)
-        
-        // User added annotations (by pressing on the screen) using gestures
-        
-        // target "self" is the view controller
-        // in the action need a : within the title to call the method mapAction
-        var uilpgr = UILongPressGestureRecognizer(target: self, action: "mapAction:")
-        
-        // Number of seconds the user has to hold down to get the gesture recognized
-        uilpgr.minimumPressDuration = 2
-        
-        map.addGestureRecognizer(uilpgr)        // add the gesture to the map
-        
         // MARK -- Loading Label Data
         loadData()
         if(results.count == 1){
@@ -140,6 +83,68 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
             going.selectedSegmentIndex = (results[0] as! Events).going as Int
             name.text = (results[0] as! Events).name
             
+            
+            var fetchedLong: Double = (results[0] as! Events).lon
+            var fetchedLat: Double = (results[0] as! Events).lat
+            
+            
+            // MARK -- Map Data
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest           // Best location Accuracy (uses more battery)
+            // (Note) requestAlwaysAuthorization is the 2nd option
+            locationManager.requestWhenInUseAuthorization()                     // Will only access the user's location when the app is running
+            locationManager.startUpdatingLocation()                             // begins updating the user's location if they have given premissions
+            
+            /*
+            * Part 1: Setting the Map
+            */
+            
+            // Latitude & Longitude for Clemson
+            var latitude: CLLocationDegrees = fetchedLat          // type is needed to use as coordinate
+            var longitude: CLLocationDegrees = fetchedLong
+            
+            // Differnce between latitudes from one side of the screen to the other.
+            // Effectively zooms in
+            var latitudeDelta: CLLocationDegrees = 0.01
+            var longitudeDelta: CLLocationDegrees = 0.01
+            
+            // Construct Map Region
+            // Span and location need deltas and long & lat values
+            var span: MKCoordinateSpan = MKCoordinateSpanMake(latitudeDelta, longitudeDelta)
+            var location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+            
+            // Define what portion of the map to display
+            // MKCoordinateRegionMake needs location and span
+            var region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+            
+            // set the map region and have it animated
+            map.setRegion(region, animated: true)
+            
+            /*
+            * Part 2: Annotations  (The little red pins)
+            */
+            
+            // Default annotations
+            // Create an annotation
+            var annotation = MKPointAnnotation()
+            annotation.coordinate = location                // set coordinate to the location
+            annotation.title = "Clemson University"         // set title information
+            annotation.subtitle = "Welcome to Clemson"
+            
+            // Add the annotation to the map
+            map.addAnnotation(annotation)
+            
+            // User added annotations (by pressing on the screen) using gestures
+            
+            // target "self" is the view controller
+            // in the action need a : within the title to call the method mapAction
+            var uilpgr = UILongPressGestureRecognizer(target: self, action: "mapAction:")
+            
+            // Number of seconds the user has to hold down to get the gesture recognized
+            uilpgr.minimumPressDuration = 2
+            
+            map.addGestureRecognizer(uilpgr)        // add the gesture to the map
+            
         }
         else if(results.count > 1){
             println("ERROR: Found multiple events with id == \(eventid)")
@@ -147,7 +152,8 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
         else {
             println("ERROR: Could not locate an Event with id == \(eventid)")
         }
-        //eventIdLabel.text = "Selected Event ID: \(eventid)"
+        // eventIdLabel.text = "Selected Event ID: \(eventid)"
+        
     }
     
     func mapAction(gestureRecognizer: UIGestureRecognizer) {

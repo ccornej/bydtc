@@ -14,11 +14,71 @@ import Alamofire
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var phoneTextField: UITextField!
+    
+    /*
+    @IBAction func goButton(sender: AnyObject) {
+        var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        var context: NSManagedObjectContext = appDel.managedObjectContext!
+
+        print("checking external db for user")
+        let phoneNumber: String = phoneTextField.text
+        var urlString = "http://people.cs.clemson.edu/~bckenne/getMyInfo.php?&phone=\(phoneNumber)"
+        urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        println(urlString)
+        Alamofire.request(.GET, urlString, parameters: nil).responseJSON {
+            (request, response, JSON, error) in
+            //println(request)
+            //println(response)
+            println(JSON!)
+            if(JSON!.count == 0) {
+                println("no JSON data")
+                let alert = UIAlertController(title: "Error!", message: "Could not find user associated with this phone number.", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+            } else {
+                let ent = NSEntityDescription.entityForName("Users", inManagedObjectContext: context)
+                
+                /*
+                if(newUser ) {
+                }
+                */
+                
+                var newUser = Users(entity: ent!, insertIntoManagedObjectContext: context)
+                newUser.phone = phoneNumber
+                if let item: AnyObject = JSON![0] {
+                    if let id: AnyObject? = item["id"] {
+                        let stringID = "\(id!)"
+                        let intID = stringID.toInt()!
+                        newUser.id = intID
+                    }
+                    if let name: AnyObject? = item["firstName"] {
+                        let stringName = "\(name!)"
+                        newUser.name = stringName
+                    }
+                }
+                context.save(nil)
+            }
+            var request = NSFetchRequest(entityName: "Users")
+            request.returnsObjectsAsFaults = false
+            var results = context.executeFetchRequest(request, error: nil)!
+            var user: Users = results[0] as! Users
+            println("Fetched the user")
+            println("id: \(user.id)")
+            println("name: \(user.name)")
+            println("phone: \(user.phone)")
+        }
+    }
+*/
+    
     override func viewDidLoad() {
         
         var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         var context: NSManagedObjectContext = appDel.managedObjectContext!
         
+        
+        // var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+       // var context: NSManagedObjectContext = appDel.managedObjectContext!
         /*
         
         // Events for loop
@@ -70,11 +130,72 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     //Ack: Tony Abboud. https://www.youtube.com/watch?v=cAQtOsfkD5A
 
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        
-    
         self.view.endEditing(true)
     }
-
-
-
+ 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        println("We are in prepare for segue")
+        if segue.identifier == "LoginSegue" {
+            println("We are in if statement")
+            var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+            var context: NSManagedObjectContext = appDel.managedObjectContext!
+            
+            print("checking external db for user")
+            let phoneNumber: String = phoneTextField.text
+            var urlString = "http://people.cs.clemson.edu/~bckenne/getMyInfo.php?&phone=\(phoneNumber)"
+            urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+            println(urlString)
+            Alamofire.request(.GET, urlString, parameters: nil).responseJSON {
+                (request, response, JSON, error) in
+                //println(request)
+                //println(response)
+                println(JSON!)
+                if(JSON!.count == 0) {
+                    println("no JSON data")
+                    let alert = UIAlertController(title: "Error!", message: "Could not find user associated with this phone number.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    let ent = NSEntityDescription.entityForName("Users", inManagedObjectContext: context)
+                    var request = NSFetchRequest(entityName: "Users")
+                    
+                    request.returnsObjectsAsFaults = false
+                    var results = context.executeFetchRequest(request, error: nil)!
+                    
+                    let item: AnyObject = JSON![0]
+                    
+                    let id: AnyObject? = item["id"]
+                    let stringID = "\(id!)"
+                    let intID = stringID.toInt()!
+                    
+                    let name: AnyObject? = item["firstName"]
+                    let stringName = "\(name!)"
+                    
+                    if(results.count > 0) {
+                        var oldUser:Users = results[0] as! Users
+                        oldUser.setValue(intID, forKey: "id")
+                        oldUser.setValue(stringName, forKey: "name")
+                        oldUser.setValue(phoneNumber, forKey: "phone")
+                    } else{
+                        var newUser = Users(entity: ent!, insertIntoManagedObjectContext: context)
+                        newUser.phone = phoneNumber
+                        newUser.name = stringName
+                        newUser.id = intID
+                    }
+                    context.save(nil)
+                }
+                var request = NSFetchRequest(entityName: "Users")
+                request.returnsObjectsAsFaults = false
+                var results = context.executeFetchRequest(request, error: nil)!
+                var user: Users = results[0] as! Users
+                println("Fetched the user")
+                println("id: \(user.id)")
+                println("name: \(user.name)")
+                println("phone: \(user.phone)")
+                
+              }
+            }
+        }
 }
