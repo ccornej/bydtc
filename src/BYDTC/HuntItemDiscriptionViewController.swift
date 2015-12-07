@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import Alamofire
 
 class HuntItemDiscriptionViewController: UIViewController {
     
@@ -33,6 +34,17 @@ class HuntItemDiscriptionViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
         hunt.setValue(1, forKey: "found")
+        var request = NSFetchRequest(entityName: "Users")
+        request.returnsObjectsAsFaults = false
+        var results = context.executeFetchRequest(request, error: nil)!
+        var user: Users = results[0] as! Users
+        
+        Alamofire.request(.GET, "http://people.cs.clemson.edu/~bckenne/foundItem.php?&attendeeId=\(user.id)&huntId=\(hunt.id)", parameters: nil).response { (request,response, data, error) in
+            print(request)
+            print(response)
+            print(error)
+        }
+
         context.save(nil)
     }
     

@@ -11,6 +11,7 @@ import UIKit
 import CoreData
 import MapKit
 import CoreLocation
+import Alamofire
 
 class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -32,6 +33,16 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
             if managedObject.enrolled as Int > 0{
                 managedObject.setValue((managedObject.enrolled as Int) - 1, forKey: "enrolled")
             }
+            var request = NSFetchRequest(entityName: "Users")
+            request.returnsObjectsAsFaults = false
+            var results = context.executeFetchRequest(request, error: nil)!
+            var user: Users = results[0] as! Users
+            
+            Alamofire.request(.GET, "http://people.cs.clemson.edu/~bckenne/notGoingToEvent.php?&attendeeId=\(user.id)&eventId=\(managedObject.id)&enrolled=\(managedObject.enrolled)", parameters: nil).response { (request,response, data, error) in
+                print(request)
+                print(response)
+                print(error)
+            }
             context.save(nil)
         }
         else if going.selectedSegmentIndex == 1 {
@@ -44,6 +55,16 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
             else{
                 managedObject.setValue(1, forKey: "going")
                 managedObject.setValue((managedObject.enrolled as Int) + 1, forKey: "enrolled")
+                var request = NSFetchRequest(entityName: "Users")
+                request.returnsObjectsAsFaults = false
+                var results = context.executeFetchRequest(request, error: nil)!
+                var user: Users = results[0] as! Users
+                
+                Alamofire.request(.GET, "http://people.cs.clemson.edu/~bckenne/goingToEvent.php?&attendeeId=\(user.id)&eventId=\(managedObject.id)&enrolled=\(managedObject.enrolled)", parameters: nil).response { (request,response, data, error) in
+                    print(request)
+                    print(response)
+                    print(error)
+                }
                 context.save(nil)
             }
         }
@@ -128,8 +149,11 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
             // Create an annotation
             var annotation = MKPointAnnotation()
             annotation.coordinate = location                // set coordinate to the location
-            annotation.title = "Clemson University"         // set title information
-            annotation.subtitle = "Welcome to Clemson"
+           // annotation.title = "Clemson University"         // set title information
+           // annotation.subtitle = "Welcome to Clemson"
+            
+            map.showsUserLocation = true                   // Show users location as a dot
+
             
             // Add the annotation to the map
             map.addAnnotation(annotation)
@@ -186,8 +210,8 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
         var latitude = userLocation.coordinate.latitude
         var longitude = userLocation.coordinate.longitude
         
-        var latDelta: CLLocationDegrees = 0.05
-        var longDelta: CLLocationDegrees = 0.05
+        var latDelta: CLLocationDegrees = 0.01
+        var longDelta: CLLocationDegrees = 0.01
         
         var span: MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
         var location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
