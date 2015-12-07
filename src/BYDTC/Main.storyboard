@@ -284,7 +284,8 @@
                                 </constraints>
                                 <state key="normal" image="go_btn"/>
                                 <connections>
-                                    <segue destination="uaX-ZV-c7n" kind="show" identifier="LoginSegue" id="OQv-gV-d0b"/>
+                                    <action selector="goButton:" destination="pqx-Zr-z2z" eventType="touchUpInside" id="vXR-yL-4Vv"/>
+                                    <action selector="startSpinning:" destination="pqx-Zr-z2z" eventType="touchUpInside" id="E2M-OK-7YP"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NFQ-1S-jXp">
@@ -296,6 +297,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Rue-ZS-hiU">
+                                <rect key="frame" x="169" y="71" width="37" height="37"/>
+                                <animations/>
+                                <color key="color" red="0.16470588235294117" green="0.086274509803921567" blue="0.46274509803921571" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -314,12 +320,13 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="Rue-ZS-hiU" id="AAN-Qn-oJg"/>
                         <outlet property="phoneTextField" destination="NFQ-1S-jXp" id="RmT-hk-Coh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NS6-Yw-kke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-456.5" y="253.5"/>
+            <point key="canvasLocation" x="-363.5" y="217.5"/>
         </scene>
         <!--About-->
         <scene sceneID="yBf-Ta-RiP">
@@ -356,10 +363,10 @@
             </objects>
             <point key="canvasLocation" x="19.5" y="-694.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="XoA-2Q-RvY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uaX-ZV-c7n" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Nav" automaticallyAdjustsScrollViewInsets="NO" id="uaX-ZV-c7n" customClass="NavigationViewController" customModule="BYDTC" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0lR-2u-fVW">
@@ -374,7 +381,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pmb-bT-vcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="124" y="254"/>
+            <point key="canvasLocation" x="139.5" y="217.5"/>
         </scene>
         <!--Contact Info-->
         <scene sceneID="5CS-iH-ein">
@@ -656,7 +663,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="214" id="IYf-kH-9bc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -779,7 +786,7 @@
                             <constraint firstItem="6vk-N1-wX3" firstAttribute="top" secondItem="ioD-5l-Wht" secondAttribute="bottom" constant="8" symbolic="YES" id="siH-HD-BG7"/>
                             <constraint firstItem="IOq-lv-ymb" firstAttribute="top" secondItem="UM2-A9-E3f" secondAttribute="bottom" constant="8" symbolic="YES" id="tBA-5M-EwR"/>
                             <constraint firstItem="IOq-lv-ymb" firstAttribute="trailing" secondItem="W6K-2O-qbp" secondAttribute="trailingMargin" id="uGd-JU-hnT"/>
-                            <constraint firstItem="7Y0-uk-R0l" firstAttribute="baseline" secondItem="ioD-5l-Wht" secondAttribute="baseline" id="uNB-Er-RQL"/>
+                            <constraint firstItem="7Y0-uk-R0l" firstAttribute="baseline" secondItem="ioD-5l-Wht" secondAttribute="baseline" constant="-1" id="uNB-Er-RQL"/>
                             <constraint firstItem="IOq-lv-ymb" firstAttribute="leading" secondItem="W6K-2O-qbp" secondAttribute="leadingMargin" id="uwg-tB-UHg"/>
                             <constraint firstItem="MSU-d5-Ry5" firstAttribute="top" secondItem="zzn-jI-VgR" secondAttribute="bottom" constant="8" symbolic="YES" id="x4l-6M-PrO"/>
                             <constraint firstItem="p9S-Ce-3VB" firstAttribute="top" secondItem="zAM-mZ-RF8" secondAttribute="bottom" constant="8" symbolic="YES" id="xis-5W-dJo"/>

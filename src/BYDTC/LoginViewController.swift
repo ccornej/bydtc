@@ -14,7 +14,94 @@ import Alamofire
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var phoneTextField: UITextField!
+    
+    @IBAction func startSpinning(sender: AnyObject) {
+        activityIndicatorView.hidden = false
+        activityIndicatorView.startAnimating()
+    }
+    
+    @IBAction func goButton(sender: AnyObject) {
+        println("We are in prepare for segue")
+            println("We are in if statement")
+            var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+            var context: NSManagedObjectContext = appDel.managedObjectContext!
+            
+            print("checking external db for user")
+            let phoneNumber: String = phoneTextField.text
+            var urlString = "http://people.cs.clemson.edu/~bckenne/getMyInfo.php?&phone=\(phoneNumber)"
+            urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+            println(urlString)
+            Alamofire.request(.GET, urlString, parameters: nil).responseJSON {
+                (request, response, JSON, error) in
+                //println(request)
+                //println(response)
+                println(JSON!)
+                if(JSON!.count == 0) {
+                    println("no JSON data")
+                    let alert = UIAlertController(title: "Error!", message: "Could not find user associated with this phone number.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    let ent = NSEntityDescription.entityForName("Users", inManagedObjectContext: context)
+                    var request = NSFetchRequest(entityName: "Users")
+                    
+                    request.returnsObjectsAsFaults = false
+                    var results = context.executeFetchRequest(request, error: nil)!
+                    
+                    let item: AnyObject = JSON![0]
+                    
+                    let id: AnyObject? = item["id"]
+                    let stringID = "\(id!)"
+                    let intID = stringID.toInt()!
+                    
+                    let name: AnyObject? = item["firstName"]
+                    let stringName = "\(name!)"
+                    
+                    if(results.count > 0) {
+                        var oldUser:Users = results[0] as! Users
+                        oldUser.setValue(intID, forKey: "id")
+                        oldUser.setValue(stringName, forKey: "name")
+                        oldUser.setValue(phoneNumber, forKey: "phone")
+                    } else {
+                        var newUser = Users(entity: ent!, insertIntoManagedObjectContext: context)
+                        newUser.phone = phoneNumber
+                        newUser.name = stringName
+                        newUser.id = intID
+                    }
+                    context.save(nil)
+                }
+                var request = NSFetchRequest(entityName: "Users")
+                request.returnsObjectsAsFaults = false
+                var results = context.executeFetchRequest(request, error: nil)!
+                var user: Users = results[0] as! Users
+                println("Fetched the user")
+                println("id: \(user.id)")
+                println("name: \(user.name)")
+                println("phone: \(user.phone)")
+                
+            }
+        
+        delay(3.0) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
+        self.activityIndicatorView.stopAnimating()
+        self.activityIndicatorView.hidden = true
+        self.presentViewController(vc, animated: true, completion: nil)
+        }
+    }
+
+    
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+
     
     /*
     @IBAction func goButton(sender: AnyObject) {
@@ -133,7 +220,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
  
-    
+/*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         println("We are in prepare for segue")
@@ -198,4 +285,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
               }
             }
         }
+*/
 }

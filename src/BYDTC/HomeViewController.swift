@@ -40,12 +40,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         
         var request = NSFetchRequest(entityName: "Users")
         
-        delay(1.0) {
+       //delay(2.0) {
             request.returnsObjectsAsFaults = false
             var results = context.executeFetchRequest(request, error: nil)!
             var user: Users = results[0] as! Users
             self.welcomeLabel?.text = "Welcome, \(user.name)!"
-        }
+        // }
     }
     
     func delay(delay:Double, closure:()->()) {
