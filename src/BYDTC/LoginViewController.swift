@@ -54,6 +54,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     request.returnsObjectsAsFaults = false
                     var results = context.executeFetchRequest(request, error: nil)!
+<<<<<<< HEAD
+=======
+                    println("1")
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
                     let item: AnyObject = JSON![0]
                     
                     let id: AnyObject? = item["id"]
@@ -62,17 +66,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     let name: AnyObject? = item["firstName"]
                     let stringName = "\(name!)"
+<<<<<<< HEAD
                     if(results.count > 0) {
+=======
+                    println("2")
+                    if(results.count > 0) {
+                        println("4")
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
                         var oldUser:Users = results[0] as! Users
                         oldUser.setValue(intID, forKey: "id")
                         oldUser.setValue(stringName, forKey: "name")
                         oldUser.setValue(phoneNumber, forKey: "phone")
+<<<<<<< HEAD
                     } else {
+=======
+                        println("4.5")
+                    } else {
+                        println("5")
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
                         var newUser = Users(entity: ent!, insertIntoManagedObjectContext: context)
                         newUser.phone = phoneNumber
                         newUser.name = stringName
                         newUser.id = intID
                     }
+<<<<<<< HEAD
                     context.save(nil)
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vc = storyboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
@@ -86,6 +103,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     //self.delay(3.0) {
                         
                     //}
+=======
+                    println("6")
+                    context.save(nil)
+                    
+                    println("7")
+                }
+                println("8")
+                println("3")
+                if(badNum == 0){
+                    self.loadData(intID, appDel: appDel, context: context)
+                    self.delay(5.0) {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewControllerWithIdentifier("Nav") as! UINavigationController
+                        self.activityIndicatorView.stopAnimating()
+                        self.activityIndicatorView.hidden = true
+                        self.presentViewController(vc, animated: true, completion: nil)
+                    }
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
                 }
                 
             }

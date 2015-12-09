@@ -14,7 +14,11 @@ import CoreLocation
 import Alamofire
 
 class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
     // Class Variables
     @IBOutlet weak var map: MKMapView!
     var locationManager = CLLocationManager()
@@ -149,11 +153,19 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
             // Create an annotation
             var annotation = MKPointAnnotation()
             annotation.coordinate = location                // set coordinate to the location
+<<<<<<< HEAD
             // annotation.title = "Clemson University"         // set title information
             // annotation.subtitle = "Welcome to Clemson"
             
             map.showsUserLocation = true                   // Show users location as a dot
             
+=======
+           // annotation.title = "Clemson University"         // set title information
+           // annotation.subtitle = "Welcome to Clemson"
+            
+            map.showsUserLocation = true                   // Show users location as a dot
+
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
             
             // Add the annotation to the map
             map.addAnnotation(annotation)
@@ -197,7 +209,11 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
         annotation.subtitle = "You are here"
         
         map.addAnnotation(annotation)
+<<<<<<< HEAD
     }
+=======
+    } 
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
     
     // Handle user movement on the map
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {

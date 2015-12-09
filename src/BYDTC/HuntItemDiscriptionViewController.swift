@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+<<<<<<< HEAD
 import MapKit
 import CoreLocation
 import Alamofire
@@ -19,6 +20,11 @@ class HuntItemDiscriptionViewController: UIViewController, CLLocationManagerDele
     var locationManager = CLLocationManager()
 
     var currentLocation: CLLocation!
+=======
+import Alamofire
+
+class HuntItemDiscriptionViewController: UIViewController {
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
     
     var appDel = UIApplication.sharedApplication().delegate as! AppDelegate
     var context: NSManagedObjectContext!
@@ -30,6 +36,7 @@ class HuntItemDiscriptionViewController: UIViewController, CLLocationManagerDele
     @IBOutlet weak var huntItemLabel: UILabel!
     @IBOutlet weak var clueItemDiscriptionView: UITextView!
     
+<<<<<<< HEAD
     var databaseLong: Double = 0
     var databaseLat: Double = 0
 
@@ -111,6 +118,31 @@ class HuntItemDiscriptionViewController: UIViewController, CLLocationManagerDele
             alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
         }
+=======
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadData()
+    }
+
+    @IBAction func FoundButton(sender: AnyObject) {
+        let alert = UIAlertController(title: "You Found it!", message: "Congradulations! Good Job!", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        hunt.setValue(1, forKey: "found")
+        var request = NSFetchRequest(entityName: "Users")
+        request.returnsObjectsAsFaults = false
+        var results = context.executeFetchRequest(request, error: nil)!
+        var user: Users = results[0] as! Users
+        
+        Alamofire.request(.GET, "http://people.cs.clemson.edu/~bckenne/foundItem.php?&attendeeId=\(user.id)&huntId=\(hunt.id)", parameters: nil).response { (request,response, data, error) in
+            print(request)
+            print(response)
+            print(error)
+        }
+
+        context.save(nil)
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
     }
     
     func loadData() {
@@ -123,11 +155,14 @@ class HuntItemDiscriptionViewController: UIViewController, CLLocationManagerDele
         hunt = results[0] as! Hunts
         clueItemDiscriptionView?.text = hunt.clue1
         huntItemLabel?.text = "Item \(huntItemID)"
+<<<<<<< HEAD
         databaseLong = hunt.lon
         databaseLat = hunt.lat
         if(hunt.found == 1){
             self.button.enabled = false
         }
+=======
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
     }
 
 }

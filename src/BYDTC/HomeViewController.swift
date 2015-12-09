@@ -18,7 +18,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     
     
     override func viewDidLoad() {
+<<<<<<< HEAD
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "appBecomeActive", name: UIApplicationWillEnterForegroundNotification, object: nil )
+=======
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
         //var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         //var context: NSManagedObjectContext = appDel.managedObjectContext!
        // var appDel: AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
@@ -46,6 +49,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             var results = context.executeFetchRequest(request, error: nil)!
             var user: Users = results[0] as! Users
             self.welcomeLabel?.text = "Welcome, \(user.name)!"
+<<<<<<< HEAD
             loadData(user.id, appDel: appDel, context: context)
         
         // }
@@ -62,6 +66,10 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         self.welcomeLabel?.text = "Welcome, \(user.name)!"
         loadData(user.id, appDel: appDel, context: context)
     }
+=======
+        // }
+    }
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
     
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
@@ -71,6 +79,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             ),
             dispatch_get_main_queue(), closure)
     }
+<<<<<<< HEAD
     func loadData(id: NSNumber, appDel: AppDelegate, context: NSManagedObjectContext) {
         var urlString = "http://people.cs.clemson.edu/~bckenne/getAllEvents.php"
         urlString = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
@@ -399,5 +408,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
+=======
+>>>>>>> 0112db35199b5059e7f732b3e8d08f2329320b60
     
 }
