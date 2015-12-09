@@ -16,8 +16,8 @@ class Hunts: NSManagedObject {
     @NSManaged var clue3: String
     @NSManaged var desc: String
     @NSManaged var id: NSNumber
-    @NSManaged var lat: AnyObject
-    @NSManaged var lon: AnyObject
+    @NSManaged var lat: Double
+    @NSManaged var lon: Double
     @NSManaged var name: String
     @NSManaged var found: NSNumber
     @NSManaged var imageURL: String

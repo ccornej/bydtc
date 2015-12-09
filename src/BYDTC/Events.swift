@@ -17,8 +17,8 @@ class Events: NSManagedObject {
     @NSManaged var enrolled: NSNumber
     @NSManaged var going: NSNumber
     @NSManaged var id: NSNumber
-    @NSManaged var lat: AnyObject
-    @NSManaged var lon: AnyObject
+    @NSManaged var lat: Double
+    @NSManaged var lon: Double
     @NSManaged var name: String
     @NSManaged var time: NSNumber
     

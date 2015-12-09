@@ -11,9 +11,9 @@ import UIKit
 import CoreData
 import MapKit
 import CoreLocation
+import Alamofire
 
 class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
-    
     
     // Class Variables
     @IBOutlet weak var map: MKMapView!
@@ -33,9 +33,19 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
             if managedObject.enrolled as Int > 0{
                 managedObject.setValue((managedObject.enrolled as Int) - 1, forKey: "enrolled")
             }
+            var request = NSFetchRequest(entityName: "Users")
+            request.returnsObjectsAsFaults = false
+            var results = context.executeFetchRequest(request, error: nil)!
+            var user: Users = results[0] as! Users
+            
+            Alamofire.request(.GET, "http://people.cs.clemson.edu/~bckenne/notGoingToEvent.php?&attendeeId=\(user.id)&eventId=\(managedObject.id)&enrolled=\(managedObject.enrolled)", parameters: nil).response { (request,response, data, error) in
+                print(request)
+                print(response)
+                print(error)
+            }
             context.save(nil)
         }
-        else if going.selectedSegmentIndex == 1{
+        else if going.selectedSegmentIndex == 1 {
             if managedObject.enrolled as Int >= managedObject.capacity as Int{
                 
                 //we should make an alert pop up here!! MAX CAPACITY SORRY
@@ -45,12 +55,22 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
             else{
                 managedObject.setValue(1, forKey: "going")
                 managedObject.setValue((managedObject.enrolled as Int) + 1, forKey: "enrolled")
+                var request = NSFetchRequest(entityName: "Users")
+                request.returnsObjectsAsFaults = false
+                var results = context.executeFetchRequest(request, error: nil)!
+                var user: Users = results[0] as! Users
+                
+                Alamofire.request(.GET, "http://people.cs.clemson.edu/~bckenne/goingToEvent.php?&attendeeId=\(user.id)&eventId=\(managedObject.id)&enrolled=\(managedObject.enrolled)", parameters: nil).response { (request,response, data, error) in
+                    print(request)
+                    print(response)
+                    print(error)
+                }
                 context.save(nil)
             }
         }
         enrolled.text = "\(managedObject.enrolled)"
     }
-
+    
     
     var appDel = UIApplication.sharedApplication().delegate as! AppDelegate
     var context: NSManagedObjectContext!
@@ -60,64 +80,6 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // MARK -- Map Data
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest           // Best location Accuracy (uses more battery)
-        // (Note) requestAlwaysAuthorization is the 2nd option
-        locationManager.requestWhenInUseAuthorization()                     // Will only access the user's location when the app is running
-        locationManager.startUpdatingLocation()                             // begins updating the user's location if they have given premissions
-        
-        /*
-        * Part 1: Setting the Map
-        */
-        
-        // Latitude & Longitude for Clemson
-        var latitude: CLLocationDegrees = 34.6783          // type is needed to use as coordinate
-        var longitude: CLLocationDegrees = -82.8392
-        
-        // Differnce between latitudes from one side of the screen to the other.
-        // Effectively zooms in
-        var latitudeDelta: CLLocationDegrees = 0.01
-        var longitudeDelta: CLLocationDegrees = 0.01
-        
-        // Construct Map Region
-        // Span and location need deltas and long & lat values
-        var span: MKCoordinateSpan = MKCoordinateSpanMake(latitudeDelta, longitudeDelta)
-        var location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        
-        // Define what portion of the map to display
-        // MKCoordinateRegionMake needs location and span
-        var region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        
-        // set the map region and have it animated
-        map.setRegion(region, animated: true)
-        
-        
-        /*
-        * Part 2: Annotations  (The little red pins)
-        */
-        
-        // Default annotations
-        // Create an annotation
-        var annotation = MKPointAnnotation()
-        annotation.coordinate = location                // set coordinate to the location
-        annotation.title = "Clemson University"         // set title information
-        annotation.subtitle = "Welcome to Clemson"
-        
-        // Add the annotation to the map
-        map.addAnnotation(annotation)
-        
-        // User added annotations (by pressing on the screen) using gestures
-        
-        // target "self" is the view controller
-        // in the action need a : within the title to call the method mapAction
-        var uilpgr = UILongPressGestureRecognizer(target: self, action: "mapAction:")
-        
-        // Number of seconds the user has to hold down to get the gesture recognized
-        uilpgr.minimumPressDuration = 2
-        
-        map.addGestureRecognizer(uilpgr)        // add the gesture to the map
         
         // MARK -- Loading Label Data
         loadData()
@@ -142,14 +104,80 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
             going.selectedSegmentIndex = (results[0] as! Events).going as Int
             name.text = (results[0] as! Events).name
             
+            
+            var fetchedLong: Double = (results[0] as! Events).lon
+            var fetchedLat: Double = (results[0] as! Events).lat
+            
+            
+            // MARK -- Map Data
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest           // Best location Accuracy (uses more battery)
+            // (Note) requestAlwaysAuthorization is the 2nd option
+            locationManager.requestWhenInUseAuthorization()                     // Will only access the user's location when the app is running
+            locationManager.startUpdatingLocation()                             // begins updating the user's location if they have given premissions
+            
+            /*
+            * Part 1: Setting the Map
+            */
+            
+            // Latitude & Longitude for Clemson
+            var latitude: CLLocationDegrees = fetchedLat          // type is needed to use as coordinate
+            var longitude: CLLocationDegrees = fetchedLong
+            
+            // Differnce between latitudes from one side of the screen to the other.
+            // Effectively zooms in
+            var latitudeDelta: CLLocationDegrees = 0.01
+            var longitudeDelta: CLLocationDegrees = 0.01
+            
+            // Construct Map Region
+            // Span and location need deltas and long & lat values
+            var span: MKCoordinateSpan = MKCoordinateSpanMake(latitudeDelta, longitudeDelta)
+            var location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+            
+            // Define what portion of the map to display
+            // MKCoordinateRegionMake needs location and span
+            var region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+            
+            // set the map region and have it animated
+            map.setRegion(region, animated: true)
+            
+            /*
+            * Part 2: Annotations  (The little red pins)
+            */
+            
+            // Default annotations
+            // Create an annotation
+            var annotation = MKPointAnnotation()
+            annotation.coordinate = location                // set coordinate to the location
+            // annotation.title = "Clemson University"         // set title information
+            // annotation.subtitle = "Welcome to Clemson"
+            
+            map.showsUserLocation = true                   // Show users location as a dot
+            
+            
+            // Add the annotation to the map
+            map.addAnnotation(annotation)
+            
+            // User added annotations (by pressing on the screen) using gestures
+            
+            // target "self" is the view controller
+            // in the action need a : within the title to call the method mapAction
+            var uilpgr = UILongPressGestureRecognizer(target: self, action: "mapAction:")
+            
+            // Number of seconds the user has to hold down to get the gesture recognized
+            uilpgr.minimumPressDuration = 2
+            
+            map.addGestureRecognizer(uilpgr)        // add the gesture to the map
+            
         }
-        else if(results.count > 1){
+        else if(results.count > 1) {
             println("ERROR: Found multiple events with id == \(eventid)")
         }
         else {
             println("ERROR: Could not locate an Event with id == \(eventid)")
         }
-        //eventIdLabel.text = "Selected Event ID: \(eventid)"
+        // eventIdLabel.text = "Selected Event ID: \(eventid)"
+        
     }
     
     func mapAction(gestureRecognizer: UIGestureRecognizer) {
@@ -171,7 +199,6 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
         map.addAnnotation(annotation)
     }
     
-    
     // Handle user movement on the map
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
@@ -183,8 +210,8 @@ class EventDetailViewController: UIViewController, MKMapViewDelegate, CLLocation
         var latitude = userLocation.coordinate.latitude
         var longitude = userLocation.coordinate.longitude
         
-        var latDelta: CLLocationDegrees = 0.05
-        var longDelta: CLLocationDegrees = 0.05
+        var latDelta: CLLocationDegrees = 0.01
+        var longDelta: CLLocationDegrees = 0.01
         
         var span: MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
         var location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
